@@ -1,18 +1,34 @@
 import { Injectable } from '@angular/core';
-import{HttpClient}  from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { from, Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
+
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
+  users: string = 'https://bookcart.azurewebsites.net/api/Login';
   
-   baseUrl :string = 'https://bookcart.azurewebsites.net/swagger/v1/swagger.json';
+  
 
 
-  constructor(private http: HttpClient) { }
-  isLoggedIn() {
+  constructor(private http: HttpClient, private router: Router) {}
 
-    return this.http.get<any>(this.baseUrl)
+  login(user:any ) {
+    return this.http.post(this.users, user);
+    
   }
+
+  loggedIn() {
+    return !! localStorage.getItem("token");
+    
+  }
+
   
+
+
+
 }

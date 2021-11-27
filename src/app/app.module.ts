@@ -8,7 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guard/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
-// import { MatSliderModule } from '@angular/material/slider';
+import { PaymentComponent } from './components/payment/payment.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 
 
@@ -16,19 +24,24 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     CheckoutComponent,
-    
+    PaymentComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // MatSliderModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-  
     
+  
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService,AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard],
+  bootstrap: [AppComponent],
+
 })
-export class AppModule { }
+export class AppModule {}

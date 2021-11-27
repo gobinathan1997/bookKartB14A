@@ -10,13 +10,9 @@ export class AppComponent {
   
   
   title = 'bookKartB14A';
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
-  isLoggedIn(required:boolean){
-    this.authService.isLoggedIn;
-    
-    }
-    
+
  
 
   }

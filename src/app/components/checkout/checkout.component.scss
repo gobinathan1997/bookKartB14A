@@ -1,6 +1,14 @@
-.check{
+.Checkout{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+
     align-items: center;
+}
+
+.proceed{
+    font-size: xx-large;
+}
+.logout{
+    font-size: larger;
 }
